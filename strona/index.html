@@ -11,13 +11,34 @@
 
 <body>
     <div class="main-page">
+        <div class="infonavbar">
+            <div class="infonavbar-cont">
+                <div class="logo"></div>
+                <div class="infonavbar-phone">
+                    <img src="./img/telephone.png" alt="infonavbar_icon" srcset="" width=40 height=40>
+                    <p class="infonavbar-p">Numer telefonu</p>
+                    <p class="infonavbar-h">+48 221267131</p>
+                </div>
+                <div class="infonavbar-mail"> <img src="./img/mail.png" alt="infonavbar_icon" srcset="" width=40
+                        height=40>
+                    <p class="infonavbar-p">Email</p>
+                    <p class="infonavbar-h">info@axisgl.com</p>
+                </div>
+                <div class="infonavbar-opentime"> <img src="./img/clock.png" width=40 height=40 alt="infonavbar_icon"
+                        srcset="">
+                    <p class="infonavbar-p">Czas otwarcia</p>
+                    <p class="infonavbar-h">Pon-Sob: 8:00-17:00</p>
+                </div>
+                <div class="infonavbars-sm"></div>
+            </div>
 
+        </div>
         <div class='navbar-main'>
 
             <a href='test'><img src='./img/Logo_axis.png' alt='test'>
                 </img></a>
             <div class='nav-buttons'>
-                <button class="navbut active">Strona główna</button>
+                <button class="navbut unactive">Strona główna</button>
                 <button class="navbut unactive">O nas</button>
                 <button class="navbut unactive">Usługi</button>
                 <button class="navbut unactive">Kontakt</button>
@@ -41,6 +62,7 @@
         <div class="serwis">
 
             <div class="serwis-text">
+                <h1 class="serwis-text-h">Czym się zajmujemy?</h1>
                 <p class="serwis-text-p">Jako Axis Good Logistic oferujemy pełen zakres usług w
                     zakresie przewozu ładunków. Firma posiada wszystkie niezbędne licencję państwowe, a także nowoczesną
                     flotę. Gwarantujemy pełną obsługę transportową na wszystkich etapach realizacji zlecenia. Zaczynając
@@ -49,7 +71,7 @@
             </div>
             <div class="serwis-widgets">
                 <div class="serwis-widget" id="serwis-widget1">
-                    <div class="serwis-widget-img"></div>
+                    <div class="serwis-widget-img1"></div>
                     <div class="serwis-widget-text">
                         <h3 class="serwis-widget-text-h">TRANSPORT MIĘDZYNARODOWY</h3>
                         <p class="serwis-widget-text-p">Transport na terenie całej Europy, Rosji oraz do krajów
@@ -57,7 +79,7 @@
                     </div>
                 </div>
                 <div class="serwis-widget" id="serwis-widget2">
-                    <div class="serwis-widget-img"></div>
+                    <div class="serwis-widget-img2"></div>
                     <div class="serwis-widget-text">
                         <h3 class="serwis-widget-text-h">TRANSPORT EKSPRESOWY</h3>
                         <p class="serwis-widget-text-p">
@@ -66,7 +88,7 @@
                     </div>
                 </div>
                 <div class="serwis-widget" id="serwis-widget3">
-                    <div class="serwis-widget-img"></div>
+                    <div class="serwis-widget-img3"></div>
                     <div class="serwis-widget-text">
                         <h3 id="serwis-widget-text-h3" class="serwis-widget-text-h">TRANSPORT PONADNORMATYWNY</h3>
                         <p class="serwis-widget-text-p">Transport ponadwymiarowy i ponadgabarytowy, róznego rodzaju
@@ -74,7 +96,7 @@
                     </div>
                 </div>
                 <div class="serwis-widget" id="serwis-widget4">
-                    <div class="serwis-widget-img"></div>
+                    <div class="serwis-widget-img4"></div>
                     <div class="serwis-widget-text">
                         <h3 class="serwis-widget-text-h">TRANSPORT DROBNICOWY</h3>
                         <p class="serwis-widget-text-p"> Dostawa drobnicy do Rosji w każdy punkt przy odprawie na naszym
@@ -215,13 +237,13 @@
                     </form>
 
                     <div class="kontaktform-form-cont-imie">
-                        <input type="text" name="" id="imie" placeholder="Imię">
+                        <input type="text" name="" id="imie" placeholder="Imię" required>
                     </div>
                     <div class="kontaktform-form-cont-telefonlubemail">
-                        <input type="text" name="" id="telefonlubemail" placeholder="Numer telefonu lub email">
+                        <input type="text" name="" id="telefonlubemail" placeholder="Numer telefonu lub email" required>
                     </div>
                     <div class="Kontaktform-form-formcont"> <textarea id="msg" name="user_message"
-                            placeholder="Wiadomość"></textarea>
+                            placeholder="Wiadomość" required></textarea>
                     </div>
                     <!-- <div class="kontaktform-form-cont-adreszaladunku"><input type="text" name="" id="adreszaladunku"
                             placeholder="Adres załadunku">

@@ -37,18 +37,58 @@ const debounce = (fn) => {
   // Reads out the scroll position and stores it in the data attribute
   // so we can use it in our stylesheets
 const navbar = document.getElementsByClassName('navbar-main')[0]
+const mainpage = navbar.children[1].children[0]
+const aboutUs =navbar.children[1].children[1]
+const service = navbar.children[1].children[2]
+const contanct = navbar.children[1].children[3]
+  navButs=[mainpage,aboutUs,service,contanct]
+const removingAllActives=()=>{
+  navButs.forEach(el=>el.classList.remove('active'))
+  navButs.forEach(el=>el.classList.add('unactive'))
+}
+const addingActive=(el)=>{
+el.classList.remove('unactive')
+el.classList.add('active')
+}
   const storeScroll = () => {
     document.documentElement.dataset.scroll = window.scrollY;
     const scrollY = window.scrollY
-    if(scrollY>0)
+    if(scrollY==300)
+    navbar.classList.add('hide')
+    if(scrollY>300)
         navbar.classList.add('fixed')
     if(scrollY==0)
         navbar.classList.remove('fixed')
+    if(scrollY<823){
+          removingAllActives()
+          addingActive(mainpage)
+    }else if(scrollY>=823&scrollY<2550){
+    removingAllActives()
+    addingActive(aboutUs)}
+    else if(scrollY>=3217&scrollY<4417){
+      removingAllActives()
+      addingActive(service)}
+      else if(scrollY>=4417){
+        removingAllActives()
+        addingActive(contanct)}
+
   }
-  
+  const zapytanie = document.getElementsByClassName('zapytanie')[0]
+  const serwisbut = document.getElementsByClassName('serwis-footer-checkmorebut')[0]
+  const doswiadczeniebut = document.getElementsByClassName('doswiadczenie-text-checkmorebut')[0]
+  const ofertabut = document.getElementsByClassName('oferta-checkmorebut')[0]
+  navButs=[mainpage,aboutUs,service,contanct]
+  ofertabut.addEventListener('click',()=>{scrollTo(0,4535)})
+  doswiadczeniebut.addEventListener('click',()=>{scrollTo(0,4535)})
+  serwisbut.addEventListener('click',()=>{scrollTo(0,4535)})
+  zapytanie.addEventListener('click',()=>{scrollTo(0,4535)})
+  mainpage.addEventListener('click',()=>{scrollTo(0,0)})
+  aboutUs.addEventListener('click',()=>{scrollTo(0,833)})
+  service.addEventListener('click',()=>{scrollTo(0,3334)})
+  contanct.addEventListener('click',()=>{scrollTo(0,4535)})
   // Listen for new scroll events, here we debounce our `storeScroll` function
   document.addEventListener('scroll', debounce(storeScroll), { passive: true });
-  
+
   // Update scroll position for first time
   storeScroll();
 
