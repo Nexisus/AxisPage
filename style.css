@@ -117,7 +117,7 @@ html {
         display: flex;
         justify-content: center;
         height: 1000px;
-        display: none;
+        /* display: none; */
     }
 
     div.naszezalety-img {
@@ -146,12 +146,16 @@ html {
         /* width: 90%; */
     }
 
-    div.partnerzy {
-        display: none;
+    div.partnerzy {}
+
+    div.partnerzy-widgets {}
+
+    img.partnerzy-widgets-widget {
+        width: 80px;
     }
 
-    div.partnerzy-widgets {
-        flex-direction: column;
+    img#partnerzy-widgets-widget5 {
+        display: none;
     }
 
     div.kontaktform-form {
@@ -579,7 +583,7 @@ textarea {
 .naszezalety-cytat-podpis {}
 
 .naszezalety-cytat-podpis-signature {
-    width: 300px;
+    width: 120%;
     height: 150px;
     position: relative;
     left: -50px;
