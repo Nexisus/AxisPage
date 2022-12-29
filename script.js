@@ -41,7 +41,7 @@ const mainpage = navbar.children[1].children[0]
 const aboutUs =navbar.children[1].children[1]
 const service = navbar.children[1].children[2]
 const contanct = navbar.children[1].children[3]
-  navButs=[mainpage,aboutUs,service,contanct]
+navButs=[mainpage,aboutUs,service,contanct]
 const removingAllActives=()=>{
   navButs.forEach(el=>el.classList.remove('active'))
   navButs.forEach(el=>el.classList.add('unactive'))
@@ -88,6 +88,31 @@ el.classList.add('active')
   contanct.addEventListener('click',()=>{scrollTo(0,4535)})
   // Listen for new scroll events, here we debounce our `storeScroll` function
   document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+
+
+  // phone navbar
+  const navButtonsCont=navbar.children[1]
+  let burgerConuter=0
+  const navBurger = document.getElementsByClassName('navbar-menuburger')[0]
+  navBurger.addEventListener('click',()=>{
+    if(burgerConuter%2==0){
+    navBurger.src='/img/cross.png'
+    burgerConuter = burgerConuter +1
+    navButtonsCont.style.display='flex'
+    navbar.style.height='300px'
+    }else{
+      navBurger.src='/img/menu-burger.png'
+      burgerConuter = burgerConuter +1
+      navButtonsCont.style.display='none'
+      navbar.style.height='100px'
+    }
+
+  })
+
+  // if(navBurger.src=='/img/menu-burger.png'){
+  //   navBurger.src='./img/cross.png'}else{
+  //     navBurger.src='/img/menu-burger.png'
+
 
   // Update scroll position for first time
   storeScroll();
