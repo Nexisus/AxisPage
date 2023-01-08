@@ -1,0 +1,38 @@
+body {
+    background-color: #333333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    margin-top: 20px;
+    color: #fff;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+
+    padding: 20px 20px;
+    border: 2px solid #191e7b;
+    cursor: pointer;
+    color: azure;
+    font-size: 15px;
+    text-transform: uppercase;
+
+    /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 50%, #191e7b 50%) bottom;
+    background-size: 100% 200%;
+    transition: .3s ease-out;
+}
+
+button:hover {
+    background-position: top;
+    transition: .3s ease-out;
+}
+
+img {
+    margin-bottom: 30px;
+}

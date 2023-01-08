@@ -117,3 +117,62 @@ el.classList.add('active')
   // Update scroll position for first time
   storeScroll();
 
+// const wigdets_icons = document.getElementsByClassName('oferta-widgets-widget-icon')
+// const wigdets = document.getElementsByClassName('oferta-widgets-widget')
+// wigdets.forEach((el)=>{
+//   el.addEventListener('onmouseover',()=>{
+//     el.children[0].style.filter = 'invert(7%) sepia(62%) saturate(7468%) hue-rotate(243deg) brightness(87%) contrast(96%);'
+//   })
+// })
+// recaptcha
+
+
+// By default do not allow form submission.
+var allow_submit = false
+
+function captcha_filled () {
+    /*
+     * This is called when Google get's the recaptcha response and approves it.
+     * Setting allow_submit = true will let the form POST as normal.
+     * */
+
+    allow_submit = true
+}
+
+function captcha_expired () {
+    /*
+     * This is called when Google determines too much time has passed and expires the approval.
+     * Setting allow_submit = false will prevent the form from being submitted.
+     * */
+
+    allow_submit = false
+}
+
+
+function check_captcha_filled (e) {
+    console.log('captcha-verified')
+    /*
+     * This will be called when the form is submitted.
+     * If Google determines the captcha is OK, it will have
+     * called captcha_filled which sets allow_submit = true
+     * If the captcha has not been filled out, allow_submit
+     * will still be false.
+     * We check allow_submit and prevent the form from being submitted
+     * if the value of allow_submit is false.
+     * */
+
+    // If captcha_filled has not been called, allow_submit will be false.
+    // In this case, we want to prevent the form from being submitted.
+    if (!allow_submit) {
+        // This call prevents the form submission.
+        // e.preventDefault()
+
+        // This alert is temporary - you should replace it with whatever you want
+        // to do if the captcha has not been filled out.
+        alert('Błąd: Prosimy o potwierdzenie, że nie jesteś robotem')
+
+        return false
+    }
+    captcha_expired()
+    return true
+}

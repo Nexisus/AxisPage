@@ -4,6 +4,7 @@ body,
 html {
     margin: 0;
     height: 100%;
+
 }
 
 ::-webkit-scrollbar {
@@ -149,6 +150,7 @@ a {
 
     div.oferta-widgets {
         flex-direction: column;
+
     }
 
     div.oferta-widgets-widget {
@@ -165,15 +167,15 @@ a {
         /* width: 90%; */
     }
 
-    div.partnerzy {}
+    div.kontakt {}
 
-    div.partnerzy-widgets {}
+    div.kontakt-widgets {}
 
-    img.partnerzy-widgets-widget {
+    img.kontakt-widgets-widget {
         width: 80px;
     }
 
-    img#partnerzy-widgets-widget5 {
+    img#kontakt-widgets-widget5 {
         display: none;
     }
 
@@ -384,6 +386,17 @@ textarea {
     color: azure;
     font-size: 15px;
     text-transform: uppercase;
+
+    /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 50%, #191e7b 50%) bottom;
+    background-size: 100% 200%;
+    transition: .3s ease-out;
+
+}
+
+.zapytanie:hover {
+    background-position: top;
+    transition: .3s ease-out;
 }
 
 /* serwis  */
@@ -412,6 +425,7 @@ textarea {
 
 .serwis-widgets {
     display: flex;
+
 }
 
 .serwis-widget {
@@ -419,13 +433,37 @@ textarea {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    width: 320px;
     height: 400px;
     margin: 0px 15px;
+    cursor: pointer;
     /* overflow: hidden;
     border-radius: 20px 20px; */
 
     /* justify-content: flex-end; */
+    transition: 0.2s all;
+}
+
+/* box-shadow: 0px 8px 49px -7px rgba(66, 68, 90, 1); */
+.serwis-widget:hover {
+    box-shadow: 0px 8px 49px 0px #191e7b;
+
+}
+
+.serwis-widget:hover .serwis-widget {
+    position: static;
+}
+
+.serwis-widget:hover .serwis-widget-img1,
+.serwis-widget:hover .serwis-widget-img2,
+.serwis-widget:hover .serwis-widget-img3,
+.serwis-widget:hover .serwis-widget-img4 {
+    background-size: 215px 215px;
+}
+
+.checkout {
+
+    color: white;
 }
 
 .serwis-widget-text {
@@ -447,6 +485,7 @@ textarea {
     filter: invert(100%);
     background-position: center;
     background-repeat: no-repeat;
+    transition: all 0.2s;
 }
 
 .serwis-widget-img2 {
@@ -458,10 +497,22 @@ textarea {
     filter: invert(100%);
     background-position: center;
     background-repeat: no-repeat;
-
+    transition: all 0.2s;
 }
 
 .serwis-widget-img3 {
+    justify-self: flex-start;
+    width: 100%;
+    height: 300px;
+    background-image: url(./img/container.png);
+    background-size: 200px 200px;
+    filter: invert(100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+}
+
+.serwis-widget-img4 {
     justify-self: flex-start;
     width: 100%;
     height: 300px;
@@ -470,22 +521,9 @@ textarea {
     filter: invert(100%);
     background-position: center;
     background-repeat: no-repeat;
+    transition: all 0.2s;
 }
 
-.serwis-widget-img4 {
-    justify-self: flex-start;
-    width: 100%;
-    height: 300px;
-    background-image: url(./img/shovel.png);
-    background-size: 200px 200px;
-    filter: invert(100%);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#serwis-widget-text-h3 {
-    margin-bottom: 5px;
-}
 
 .serwis-widget-text-h {
     text-align: center;
@@ -529,6 +567,17 @@ textarea {
     border: solid 3px #191e7b;
     background-color: #191e7b;
     cursor: pointer;
+}
+
+.doswiadczenie-text-checkmorebut,
+.serwis-footer-checkmorebut {
+    transition: all 0.2s;
+}
+
+.doswiadczenie-text-checkmorebut:hover,
+.serwis-footer-checkmorebut:hover {
+    box-shadow: 0px 8px 49px -7px rgba(66, 68, 90, 1);
+
 }
 
 /* Doswiadczenie */
@@ -625,7 +674,9 @@ textarea {
     font-size: 25px;
 }
 
-.naszezalety-cytat-podpis {}
+.naszezalety-cytat-podpis {
+    margin-top: 20px;
+}
 
 .naszezalety-cytat-podpis-signature {
     width: 120%;
@@ -669,7 +720,16 @@ textarea {
     justify-content: space-evenly;
 }
 
-.oferta-text {}
+.oferta-text-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.oferta-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
 .oferta-widgets {
     display: flex;
@@ -688,20 +748,23 @@ textarea {
 
 .oferta-widgets-widget {
     width: 400px;
-    height: 200px;
+    height: 250px;
     background-color: #222222;
     border-bottom: #222222 solid 2px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     transition: border 0.3s;
     z-index: 0;
+    cursor: pointer;
 }
 
 .oferta-widgets-widget:hover {
     border-bottom: #191e7b solid 2px;
     transition: border 0.3s;
+
 }
+
 
 .oferta-widgets-widget-icon {
     width: 100px;
@@ -709,6 +772,13 @@ textarea {
     margin-left: 20px;
     align-self: center;
 }
+
+/* .oferta-widgets-widget:hover img {
+    filter: brightness(0) saturate(100%);
+    filter: invert(10%) sepia(71%) saturate(5028%) hue-rotate(258deg) brightness(88%) contrast(101%);
+
+} */
+
 
 .oferta-widgets-widget-cont {
     width: 60%;
@@ -725,15 +795,24 @@ textarea {
 .oferta-checkmorebut {
     margin-top: 40px;
     background-color: #191e7b;
-    border: #191e7b 1px solid;
+    border: #191e7b 2px solid;
     padding: 20px 30px;
     font-size: 15px;
     font-weight: 400;
     color: white;
     cursor: pointer;
+
+    background: linear-gradient(to top, #191e7b 50%, rgba(0, 0, 0, 0) 50%) bottom;
+    background-size: 100% 200%;
+    transition: .3s ease-out;
 }
 
-.partnerzy {
+.oferta-checkmorebut:hover {
+    background-position: top;
+
+}
+
+.kontakt {
     width: 100%;
     height: 40vh;
     display: flex;
@@ -742,7 +821,7 @@ textarea {
     align-items: center;
 }
 
-.partnerzy-text {
+.kontakt-text {
     color: #343434;
     display: flex;
     flex-direction: column;
@@ -751,27 +830,57 @@ textarea {
     width: 100%;
 }
 
-.partnerzy-text-h {
+.kontakt-text-h {
     text-transform: uppercase;
 }
 
-.partnerzy-text-higlight {
+.kontakt-text-higlight {
     color: #191e7b;
 }
 
-.partnerzy-widgets {
+.kontakt-widgets {
     width: 80%;
     display: flex;
     justify-content: space-evenly;
 }
 
-.partnerzy-widgets-widget {
+.kontakt-widgets-widget {
     width: 200px;
+}
+
+.kontakt-widgets-widget-text {
+    color: #222222;
+}
+
+#form1 {
+    width: 100%;
+}
+
+.kontakt-widgets-widget-adres,
+.kontakt-widgets-widget-phone,
+.kontakt-widgets-widget-mail,
+.kontakt-widgets-widget-skype {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h4 {
+    color: #222222;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.kontakt-widgets-widget-img {
+    justify-self: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
 }
 
 .kontaktform {
     width: 100%;
-    height: 98vh;
+    height: 110vh;
     background-color: #333333;
 
     display: flex;
@@ -825,13 +934,17 @@ textarea {
     margin-top: 15px;
 }
 
+.g-recaptcha {
+    margin: 20px 0px;
+}
+
 #imie {
     width: 100%;
     border-radius: 5px;
     height: 40px;
 }
 
-#telefonlubemail {
+#email {
     width: 100%;
     border-radius: 5px;
     height: 40px;
@@ -915,15 +1028,49 @@ textarea {
 
 }
 
+.zapytanie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+
+    padding: 20px 20px;
+    border: 2px solid #191e7b;
+    cursor: pointer;
+    color: azure;
+    font-size: 15px;
+    text-transform: uppercase;
+
+    /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 50%, #191e7b 50%) bottom;
+    background-size: 100% 200%;
+    transition: .3s ease-out;
+
+}
+
+.zapytanie:hover {
+    background-position: top;
+    transition: .3s ease-out;
+}
+
 .kontaktform-submitbut {
     background-color: #191e7b;
-    border: #191e7b 1px solid;
+    border: #191e7b 2px solid;
     padding: 20px 30px;
     font-size: 15px;
     font-weight: 400;
     color: white;
     margin: 20px;
     cursor: pointer;
+    text-transform: uppercase;
+    background: linear-gradient(to left, #191e7b 50%, rgba(0, 0, 0, 0) 50%) right;
+    background-size: 200% 100%;
+    transition: .3s ease-out;
+}
+
+.kontaktform-submitbut:hover {
+    background-position: left;
+    transition: .3s ease-out;
 }
 
 .footer {
@@ -949,6 +1096,40 @@ textarea {
     filter: invert(100%);
     margin: 0px 20px;
     cursor: pointer;
+}
+
+.serwis-text-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.lines {
+    display: flex;
+    position: relative;
+    height: 20px;
+}
+
+.lines-oferta {
+    display: flex;
+    height: 2px;
+    margin: 0px 20px;
+}
+
+.line {
+    height: 2px;
+    width: 30px;
+    border: none;
+    background-color: white;
+    margin: 0px 10px;
+}
+
+.dot {
+    width: 2px;
+    height: 2px;
+    margin: 0px 5px;
+    background-color: white;
+    border: none;
 }
 
 .politykaprywatnosci {
