@@ -295,10 +295,10 @@
                     </form>
                     <form action="https://formsubmit.co/rodzjan592@gmail.com" method="POST" id="form1"
                         onsubmit="return check_captcha_filled()">
-                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/thankyou.html">
+                        <input type="hidden" name="_next" value="https://nexisus.github.io/AxisPage/thankyou.html">
                         <input type="hidden" name="_captcha" value="false">
                         <div class="kontaktform-form-cont-imie">
-                            <input type="text" name="" id="imie" placeholder="Imię" required>
+                            <input type="text" name="imie" id="imie" placeholder="Imię" required>
                         </div>
                         <div class="kontaktform-form-cont-telefonlubemail">
                             <input type="email" name="email" id="email" placeholder="Email" required>
@@ -307,8 +307,8 @@
                                 placeholder="Wiadomość" required></textarea>
                         </div>
                         <div class="rodo-checkboxes">
-                            <div class="rodo-checkboxes-cont"> <input id='ppCheckbox' type="checkbox" name="ppcheckbox"
-                                    required><label for="ppcheckbox">Przeczytałam/em i akceptuję
+                            <div class="rodo-checkboxes-cont"> <input id='ppCheckbox' type="checkbox" required><label
+                                    for="ppcheckbox">Przeczytałam/em i akceptuję
                                     treść</label>
                                 <a href='./politykaprywatnosci.html' class="rodo-checkbox-pp">polityki
                                     prywatności</a>
@@ -326,12 +326,14 @@
                                     reklamowych i marketingowych oraz na przesyłanie na podany adres e-mail informacji
                                     handlowych od Axis Good Logistics sp. z o.o.</label>
                             </div>
-                            <div class="g-recaptcha" data-callback="captcha_filled"
+                            <div class="g-recaptcha" name='' data-callback="captcha_filled"
                                 data-expired-callback="captcha_expired"
                                 data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI">
                             </div>
                             <button class="kontaktform-submitbut" type="submit" form="form1" value="Submit">Wyślij
                                 zapytanie</button>
+                            <input type="hidden" name="_autoresponse"
+                                value="Witaj z tej strony zespół Axis Good Logistic. Otrzymaliśmy twoją wiadomości z zapytaniem. Pracujemy nad odpowiedzią na twoje pytanie. Miłego dnia :)">
                     </form>
                 </div>
 
